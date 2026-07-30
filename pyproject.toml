@@ -43,9 +43,9 @@ dependencies = [
 articraft = "cli.main:main"
 
 [project.urls]
-Homepage = "https://github.com/mattzh72/articraft"
-Repository = "https://github.com/mattzh72/articraft"
-Issues = "https://github.com/mattzh72/articraft/issues"
+Homepage = "https://github.com/articraftresearch/Articraft"
+Repository = "https://github.com/articraftresearch/Articraft"
+Issues = "https://github.com/articraftresearch/Articraft/issues"
 
 [build-system]
 requires = ["hatchling"]

@@ -1,3 +1,8 @@
+> [!WARNING]
+> This repository has been superseded by
+> [articraftresearch/Articraft](https://github.com/articraftresearch/Articraft).
+> Please send current contributions there.
+
 ## Description
 A clear description of the new features or bug fixes. Please include any context needed for the reviewer to understand the problem or feature.
 

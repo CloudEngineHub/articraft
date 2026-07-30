@@ -1,18 +1,38 @@
+<p align="center">
+  <a href="https://github.com/articraftresearch/Articraft">
+    <img src="docs/images/articraft-superseded.svg" alt="Articraft development has moved" style="height: 7em" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/articraftresearch/Articraft"><img src="https://img.shields.io/badge/Current_Articraft-articraftresearch%2FArticraft-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="Current Articraft repository"></a>
+  <a href="https://arxiv.org/abs/2605.15187"><img src="https://img.shields.io/badge/arXiv-2605.15187-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white" alt="Articraft paper"></a>
+</p>
+
+> [!WARNING]
+> Articraft development has moved to
+> [articraftresearch/Articraft](https://github.com/articraftresearch/Articraft).
+> That repository contains the supported successor to this project.
+> Researchers and engineers from academia and industry maintain and support it.
+>
+> Please use the new repository for current code, documentation, issues, and contributions.
+> This repository remains available for reference.
+
 # Articraft
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python versions](https://img.shields.io/badge/Python-3.11%20%7C%203.12-blue)](https://www.python.org/)
 [![CI](https://github.com/mattzh72/articraft/actions/workflows/ci.yml/badge.svg)](https://github.com/mattzh72/articraft/actions/workflows/ci.yml)
 
-**An Agentic System for Scalable Articulated 3D Asset Generation.**
+**A tool for generating and viewing articulated 3D assets.**
 
 [Paper](https://arxiv.org/abs/2605.15187) | [Project Page](https://articraft3d.github.io/) | [Dataset](https://github.com/mattzh72/articraft-data)
 
-Articraft transforms the creation of articulated 3D assets into a programmatic, code-generation workflow powered by LLMs. It is now a local-first harness: this repo contains the generation/viewer logic, while the public dataset lives separately at [`mattzh72/articraft-data`](https://github.com/mattzh72/articraft-data).
+Articraft generates articulated 3D assets from prompts. This repo contains the generation code, viewer, SDK, and command line tools. The public dataset lives at [`mattzh72/articraft-data`](https://github.com/mattzh72/articraft-data).
 
 ![Articraft viewer showing an articulated desk lamp with joint controls and library metadata](docs/images/viewer-demo.png)
 
-> **Security Note:** Articraft compiles and inspects generated records by executing their `model.py` files as Python code. Only run generated records and model scripts from trusted sources.
+> **Security note:** Articraft compiles and inspects generated records by running their `model.py` files as Python code. Only run generated records and model scripts from sources you trust.
 
 ---
 
@@ -20,9 +40,9 @@ Articraft transforms the creation of articulated 3D assets into a programmatic, 
 
 ### 1. Prerequisites
 - Python 3.12 recommended (or 3.11). *Note: 3.13+ is not currently supported.*
-- [`uv`](https://docs.astral.sh/uv/) for incredibly fast Python package management.
-- [`just`](https://github.com/casey/just) as the command runner.
-- [`npm`](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (optional, but needed for local viewer frontend).
+- [`uv`](https://docs.astral.sh/uv/) to install and run the Python package.
+- [`just`](https://github.com/casey/just) to run project commands.
+- [`npm`](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) if you want to run the local viewer frontend.
 
 ### 2. Setup
 From the repo root, run:
@@ -45,16 +65,16 @@ uv run articraft library check --require-records
 
 You can also pass any data folder explicitly with `--data-dir`.
 
-### 3. Add API Keys
+### 3. Add API keys
 Open `.env` and set one or more provider keys (e.g. `OPENAI_API_KEY`, `GEMINI_API_KEYS`, `ANTHROPIC_API_KEYS`, `DASHSCOPE_API_KEY`).
 
-> **No API Keys?** No problem. You can use external AI agents like Claude Code, Codex, or Cursor instead. For Codex setup, including how to add the Codex plugin, see [Codex Plugin Setup](docs/codex_plugin.md). Then point the agent at this repository and prompt it:
+> If you do not have API keys, you can use external AI agents like Claude Code, Codex, or Cursor instead. For Codex setup, including how to add the Codex plugin, see [Codex plugin setup](docs/codex_plugin.md). Then point the agent at this repository and prompt it:
 > 
 > *"Create a realistic articulated [object name] in Articraft. Follow EXTERNAL_AGENT_DATA.md."*
 
-### 4. Create an Asset
+### 4. Create an asset
 
-Generate your first model directly from a prompt using `articraft generate`:
+Generate a model from a prompt with `articraft generate`:
 ```bash
 uv run articraft generate "Create a realistic articulated desk lamp with a weighted base, two hinged arms, and an adjustable lamp head."
 ```
@@ -64,9 +84,9 @@ If you specify no overrides, it uses `ARTICRAFT_MODEL` and `ARTICRAFT_THINKING_L
 uv run articraft generate --max-cost-usd 1.5 "Create a compact desk fan with adjustable tilt."
 ```
 
-To generate from a reference image, see [Image-Conditioned Generation](docs/image_conditioned_generation.md).
+To generate from a reference image, see [Image conditioned generation](docs/image_conditioned_generation.md).
 
-### 5. Open the Viewer
+### 5. Open the viewer
 Browse the objects you just generated. The local viewer API and React frontend can be started with:
 ```bash
 just viewer
@@ -78,19 +98,19 @@ To browse an external data folder explicitly:
 uv run articraft viewer --data-dir /Users/mzhou/articraft-data
 ```
 
-### 6. Edit an Existing Asset
+### 6. Edit an existing asset
 Fork an existing record when you want to modify it:
 ```bash
 uv run articraft fork <record_id> "make the handle longer"
 ```
 
-Forking creates a new child record and leaves the parent unchanged. See [Editing Existing Records](docs/record_editing.md) for model options and history viewing.
+Forking creates a new child record and leaves the parent unchanged. See [Editing existing records](docs/record_editing.md) for model options and history viewing.
 
 ---
 
-## Local Library
+## Local library
 
-Use the compact library surface to inspect and maintain the data folder:
+Use these commands to inspect and maintain the data folder:
 
 ```bash
 uv run articraft library list
@@ -99,20 +119,20 @@ uv run articraft library check --require-records
 uv run articraft library set-category <record_id> <category_slug>
 ```
 
-**Data Usage & Licensing**  
-By contributing data to the Articraft project, you acknowledge and agree that your submissions will be used to build, evaluate, and improve machine learning models, and may be distributed publicly as part of Articraft data releases. You explicitly agree that all contributed data is released under the **[Creative Commons Attribution 4.0 International (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/)** license.
+**Data usage and licensing**
+By contributing data to the Articraft project, you acknowledge and agree that your submissions will be used to build, evaluate, and improve machine learning models, and may be distributed publicly as part of Articraft data releases. You agree that all contributed data is released under the **[Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)** license.
 
 ---
 
-## Documentation & Advanced Usage
+## Documentation and advanced usage
 
-- **[Architecture & Project Structure](docs/architecture.md)**
-- **[Qwen / DashScope Quickstart](docs/qwen_dashscope_quickstart.md)**
-- **[Codex Plugin Setup](docs/codex_plugin.md)**
-- **[Editing Existing Records](docs/record_editing.md)**
-- **[Image-Conditioned Generation](docs/image_conditioned_generation.md)**
-- **[Contributing Standards & Workflow](CONTRIBUTING.md)**
-- **[Security Policy](SECURITY.md)**
+- **[Architecture and project structure](docs/architecture.md)**
+- **[Qwen / DashScope quickstart](docs/qwen_dashscope_quickstart.md)**
+- **[Codex plugin setup](docs/codex_plugin.md)**
+- **[Editing existing records](docs/record_editing.md)**
+- **[Image conditioned generation](docs/image_conditioned_generation.md)**
+- **[Contributing standards and workflow](CONTRIBUTING.md)**
+- **[Security policy](SECURITY.md)**
 
 ## Citation
 

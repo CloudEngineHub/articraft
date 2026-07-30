@@ -55,6 +55,14 @@ def _write_record(repo: StorageRepo, record_id: str = "rec_lamp") -> None:
     )
 
 
+def test_cli_prints_superseded_notice(capsys: pytest.CaptureFixture[str]) -> None:
+    with pytest.raises(SystemExit) as exc_info:
+        articraft_cli.main(["--help"])
+
+    assert exc_info.value.code == 0
+    assert articraft_cli.SUCCESSOR_REPOSITORY_URL in capsys.readouterr().err
+
+
 @pytest.mark.parametrize(
     ("argv", "expected_fragments"),
     [

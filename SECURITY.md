@@ -1,5 +1,10 @@
 # Security Policy
 
+> [!WARNING]
+> This repository has been superseded by
+> [articraftresearch/Articraft](https://github.com/articraftresearch/Articraft).
+> Please report security issues for the current project through the new repository.
+
 Please do not open public issues for suspected secrets, credential exposure, or other security-sensitive reports.
 
 Report privately to repository maintainers by clicking "Report a vulnerability" on the repository's Security tab (GitHub Security Advisories). If advisories are unavailable, email the maintainer by assembling this address: `mattzh1314` + `@` + `gmail` + `.com`. Include enough detail to reproduce or verify the issue.

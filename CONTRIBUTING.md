@@ -1,5 +1,10 @@
 # Contributing to Articraft
 
+> [!WARNING]
+> This repository has been superseded by
+> [articraftresearch/Articraft](https://github.com/articraftresearch/Articraft).
+> Please send current contributions to the new repository.
+
 Thank you for your interest in improving Articraft! We welcome contributions from everyone. Whether it's a bug report, a new feature, a fix, or better documentation, everything helps.
 
 ## Getting Started

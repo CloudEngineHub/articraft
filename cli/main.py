@@ -26,6 +26,15 @@ from storage.library_manifest import rebuild_manifest, remove_record, upsert_rec
 from storage.records import RecordStore
 from storage.repo import StorageRepo
 
+SUCCESSOR_REPOSITORY_URL = "https://github.com/articraftresearch/Articraft"
+
+
+def _print_superseded_notice() -> None:
+    print(
+        f"Notice: This Articraft package has been superseded. Use {SUCCESSOR_REPOSITORY_URL}",
+        file=sys.stderr,
+    )
+
 
 def _add_repo_root(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
@@ -518,6 +527,7 @@ def _build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    _print_superseded_notice()
     parser = _build_parser()
     args = parser.parse_args(argv)
     load_repo_env(args.repo_root)

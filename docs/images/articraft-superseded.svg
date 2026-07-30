@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="160" viewBox="0 0 960 160" role="img" aria-labelledby="title description">
+  <title id="title">Articraft development has moved</title>
+  <desc id="description">Use the supported repository at github.com/articraftresearch/Articraft</desc>
+  <rect width="960" height="160" rx="24" fill="#0f172a"/>
+  <rect x="0" y="0" width="12" height="160" rx="6" fill="#22c55e"/>
+  <text x="56" y="71" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Articraft development has moved</text>
+  <text x="56" y="116" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="25">github.com/articraftresearch/Articraft</text>
+</svg>

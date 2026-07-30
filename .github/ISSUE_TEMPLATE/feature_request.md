@@ -7,6 +7,11 @@ assignees: ''
 
 ---
 
+> [!WARNING]
+> This repository has been superseded by
+> [articraftresearch/Articraft](https://github.com/articraftresearch/Articraft).
+> Please request current features there.
+
 **Is your feature request related to a problem? Please describe.**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
