@@ -1,32 +1,24 @@
+<h1 align="center">Articraft</h1>
+
+<p align="center">A tool for generating and viewing articulated 3D assets.</p>
+
 <p align="center">
-  <a href="https://github.com/articraftresearch/Articraft">
-    <img src="docs/images/articraft-superseded.svg" alt="Articraft development has moved" style="height: 7em" />
-  </a>
+  <a href="https://github.com/articraftresearch/Articraft"><img src="https://img.shields.io/badge/current%20project-articraftresearch%2FArticraft-24292f?style=flat-square&logo=github&logoColor=white" alt="Open the current Articraft project"></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/articraftresearch/Articraft"><img src="https://img.shields.io/badge/Current_Articraft-articraftresearch%2FArticraft-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="Current Articraft repository"></a>
-  <a href="https://arxiv.org/abs/2605.15187"><img src="https://img.shields.io/badge/arXiv-2605.15187-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white" alt="Articraft paper"></a>
+  <a href="https://arxiv.org/abs/2605.15187">Paper</a>
+  ·
+  <a href="https://articraft3d.github.io/">Project page</a>
+  ·
+  <a href="https://github.com/mattzh72/articraft-data">Dataset</a>
+  ·
+  <a href="LICENSE">Apache 2.0</a>
 </p>
 
-> [!WARNING]
-> Articraft development has moved to
-> [articraftresearch/Articraft](https://github.com/articraftresearch/Articraft).
-> That repository contains the supported successor to this project.
-> Researchers and engineers from academia and industry maintain and support it.
->
-> Please use the new repository for current code, documentation, issues, and contributions.
-> This repository remains available for reference.
-
-# Articraft
-
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Python versions](https://img.shields.io/badge/Python-3.11%20%7C%203.12-blue)](https://www.python.org/)
-[![CI](https://github.com/mattzh72/articraft/actions/workflows/ci.yml/badge.svg)](https://github.com/mattzh72/articraft/actions/workflows/ci.yml)
-
-**A tool for generating and viewing articulated 3D assets.**
-
-[Paper](https://arxiv.org/abs/2605.15187) | [Project Page](https://articraft3d.github.io/) | [Dataset](https://github.com/mattzh72/articraft-data)
+> [!IMPORTANT]
+> **This repository has been superseded by [articraftresearch/Articraft](https://github.com/articraftresearch/Articraft).**
+> Please use the new repository for current development and support. Researchers and engineers from academia and industry maintain it.
 
 Articraft generates articulated 3D assets from prompts. This repo contains the generation code, viewer, SDK, and command line tools. The public dataset lives at [`mattzh72/articraft-data`](https://github.com/mattzh72/articraft-data).
 
