@@ -18,7 +18,7 @@
 
 > [!IMPORTANT]
 > **This repository has been superseded by [articraftresearch/Articraft](https://github.com/articraftresearch/Articraft).**
-> Please use the new repository for current development and support. Researchers and engineers from academia and industry maintain it.
+> Please use the new repository for current development and support. Researchers and engineers from academia and industry maintain the project together.
 
 Articraft generates articulated 3D assets from prompts. This repo contains the generation code, viewer, SDK, and command line tools. The public dataset lives at [`mattzh72/articraft-data`](https://github.com/mattzh72/articraft-data).
 
